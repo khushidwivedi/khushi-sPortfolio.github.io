@@ -1,0 +1,67 @@
+<html>
+
+<head>
+    <title>Khushi Dwivedi - Junior Developer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    </title>
+</head>
+
+<body>
+    <div class="main">
+        <nav class="navbar">
+            <img src="image/logo1.gif" class="logo" />
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Aboutme.html">About Me</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+
+            </ul>
+        </nav>
+        <div class="contact">
+            <h2><img src="image/phone.png" /><a>9522911589</a></h2>
+            <h2><img src="image/email.png" /><a>khushidwivedi15@gmail.com</a></h2>
+            <h2><img src="image/linkedin.png" /><a
+                    href="https://www.linkedin.com/in/khushi-dwivedi-6663a622b/">https://www.linkedin.com/in/khushi-dwivedi-6663a622b/</a>
+            </h2>
+            <h2><img src="image/github.png" /><a
+                    href="https://github.com/khushidwivedi">https://github.com/khushidwivedi</a></h2>
+        </div>
+
+        <div class="contact-form">
+            <form onsubmit="sendEmail(); reset(); return false;">
+                <h3>GET IN TOUCH</h3>
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="E-mail" required>
+                <input type="number" id="phone" placeholder="Phone no." required>
+                <textarea id="message" rows="4" placeholder="Type a message..."></textarea>
+                <button type="submit">Send</button>
+
+            </form>
+        </div>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail() {
+            Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "khushiofficialmail76@gmail.com",
+                Password: "1E2F7D3E09F5B2AEB34E50C62567D47D0C68",
+                To: 'khushidwivedi15@gmail.com',
+                From: document.getElementById("email").value,
+                Subject: "New Contact From Enquiry",
+                Body: "Name: " + document.getElementById("name").value
+                +"<br> Email: " + document.getElementById("email").value
+                +"<br> Phone no: "+ document.getElementById("phone").value
+                +"<br> Message: " + document.getElementById("message").value   
+            }).then(
+                message => alert("Message Sent Successfully")
+            );
+        }  
+    </script>
+</body>
+
+</html>
